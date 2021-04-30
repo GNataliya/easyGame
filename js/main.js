@@ -49,62 +49,47 @@ let activeDown = () => {
 up.addEventListener('mousedown', (ev) => {
     ev.preventDefault();
     allArrows.up.active = !allArrows.up.active;
-
     activeUp();
 });
 
 left.addEventListener('mousedown', (ev) => {
     ev.preventDefault();
     allArrows.left.active = !allArrows.left.active;
-
     activeLeft();
 });
 
 right.addEventListener('mousedown', (ev) => {
     ev.preventDefault();
     allArrows.right.active = !allArrows.right.active;
-
     activeRight();
 });
 
 down.addEventListener('mousedown', (ev) => {
     ev.preventDefault();
     allArrows.down.active = !allArrows.down.active;
-
     activeDown();
 });
 
 document.addEventListener('keydown', (ev) => {
-    //ev.preventDefault();
+    ev.preventDefault();
     //allArrows.up.active = !allArrows.up.active;
-    if (ev.code !== 'ArrowUp'){
+    allArrows.active = !allArrows.active;
+    
+    if (ev.code == 'ArrowUp'){
         up.classList.add('changeColor');
+    } else if (ev.code == 'ArrowRight'){
+        left.classList.add('changeColor');
+    } else if (ev.code == 'ArrowLeft'){
+        right.classList.add('changeColor');
+    } else if (ev.code == 'ArrowDown'){
+        down.classList.add('changeColor')
     } else {
         up.classList.remove('changeColor');
+        left.classList.remove('changeColor');
+        right.classList.remove('changeColor');
+        down.classList.remove('changeColor');
     };
 });
-
-// left.addEventListener('keydown', (ev) => {
-//     ev.preventDefault();
-//     allArrows.left.active = !allArrows.left.active;
-
-//     activeLeft();
-// });
-
-// right.addEventListener('keydown', (ev) => {
-//     ev.preventDefault();
-//     allArrows.right.active = !allArrows.right.active;
-
-//     activeRight();
-// });
-
-// down.addEventListener('keydown', (ev) => {
-//     ev.preventDefault();
-//     allArrows.down.active = !allArrows.down.active;
-
-//     activeDown();
-// });
-
 
 
 form.addEventListener('submit', (ev) => {
