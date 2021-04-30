@@ -1,0 +1,28 @@
+.mainEl{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid black;
+    width: 30%;
+}
+
+td {
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.arr{
+    border: 1px solid black;
+    display: inline-flex;
+    width: 20px;
+    padding: 3px; 
+    margin: 2px;  
+}
+
+.changeColor {
+    background-color: yellow;
+}
